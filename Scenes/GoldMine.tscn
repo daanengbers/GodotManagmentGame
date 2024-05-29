@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bth1hmt8f8ejt"]
+
+[ext_resource type="Script" path="res://Scenes/GoldMine.gd" id="1_4maa2"]
+[ext_resource type="Texture2D" uid="uid://dnkfo7ov1e3gl" path="res://Sprites/TestMine.png" id="2_mfy8k"]
+
+[node name="GoldMine" type="Node2D"]
+script = ExtResource("1_4maa2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_mfy8k")
+
+[node name="GoldTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="GoldTimer" to="." method="_on_gold_timer_timeout"]
